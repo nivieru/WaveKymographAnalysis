@@ -1,8 +1,11 @@
 # WaveKymographAnalysis
 MATLAB program to extracts actin wave positions and velocity from kymographs of extract droplets
 
+## Cloning
+Clone this repo to your local machine using `git clone https://github.com/nivieru/WaveKymographAnalysis.git`
+
 ## Quick Start
-to select the kymograph file from dialog run:
+To select the kymograph file from dialog run:
 ```
 kym = kymographAnalysis
 ```
