@@ -30,7 +30,7 @@ Notice that it will overwrite the previous results!
 ## Functions
 * `kymographAnalysis([name], [parent])` - Main analysis function.
 * `initializeKymographAnalysis([filename], [parent])` - Start a new analysis. Create folder in current folder or `parent` if provided.
-open kymograph `filename`, or choose kymogrph from dialog if not provided. Choose ROI and mark waves start points.
+Open kymograph `filename`, or choose kymogrph from dialog if not provided. Choose ROI and mark waves start points.
 * `readKymograph(filename)` - Read kymograph file.
 * `averageKymograph(rkym, [frames])` - Make average kymograph from selected `frames.`
 If `frames` not provided, display kymograph video and choose frames from dialog. If `frames` is empty `[]`, use all kymogrpah frames.
