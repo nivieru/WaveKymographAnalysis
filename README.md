@@ -28,16 +28,18 @@ kym = kymographAnalysis(AnalysisDirName)
 Notice that it will overwrite the previous results!
 
 ## Functions
-* ```kymAnalysis = kymographAnalysis([name], [parent])``` - Main analysis function.
-* ```dirName = initializeKymographAnalysis([filename], [parent])``` - Start a new analysis. Create folder in current folder or [parent] if provided.
+* ```kymographAnalysis([name], [parent])``` - Main analysis function.
+* ```initializeKymographAnalysis([filename], [parent])``` - Start a new analysis. Create folder in current folder or [parent] if provided.
 open kymograph [filename], or choose kymogrph from dialog if not provided. Choose ROI and mark waves start points.
-* ```kymAnalysis = loadKymographAnalysis([dirName])``` - Load parameters and results from dirName, pick dir from dialog if not provided.
-* ```rkym = readKymograph(filename)``` - Read kymograph file.
-* ```[im_mean, frames] = averageKymograph(rkym, [frames])``` - Make average kymograph using selected frames.
-If frames not provided, display kymograph as movie open dialog. If frames is empty [], use all frames.
-* ```[peakLocs, peakPs] = findWavePeaks(y, prevPeak, peakPos)``` - Find wave times in slice y.
-* ```gaussFit = gaussianFit(y,peakLocs, gaussFits)``` - Make a time domain Gaussian fit to the first wave in slice y.
-* ```smoothedROI = gaussianSmooth(imROI, gaussFits)``` - smooth image imROI by convolving each slice r with time-domain Gaussian from series of fits.
+* ```readKymograph(filename)``` - Read kymograph file.
+* ```averageKymograph(rkym, [frames])``` - Make average kymograph from selected frames.
+If frames not provided, display kymograph video and choose frames from dialog. If frames is empty [], use all frames.
+* ```ROIKymograph(im_mean)``` - Select ROI on averaged kymograph image
+* ```getPeakStart(imRoi)``` - mark waves start points on ROI image.
+* ```loadKymographAnalysis([dirName])``` - Load parameters and results from folder dirName, pick folder from dialog if not provided.
+* ```findWavePeaks(y, prevPeak, peakPos)``` - Find wave peak times in r-slice y.
+* ```gaussianFit(y,peakLocs, gaussFits)``` - Make a time domain Gaussian fit to the first wave in r-slice y.
+* ```gaussianSmooth(imROI, gaussFits)``` - smooth image imROI by convolving each r-slice with time-domain Gaussian from series of fits.
 The parameters of the Gaussians are first smoothed in the r-domain.
-* ```results = smoothAndDiffKymResults(results, smoothWindowSize)``` - Smooth and differentiate wave tracks and calculate wave velocities.
+* ```smoothAndDiffKymResults(results, smoothWindowSize)``` - Smooth and differentiate wave tracks and calculate wave velocities.
 * ```plotKymResults(kymAnalysis)``` - Plot results.
